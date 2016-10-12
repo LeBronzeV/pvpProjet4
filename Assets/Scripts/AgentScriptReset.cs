@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AgentScript : MonoBehaviour
+public class AgentScriptReset : MonoBehaviour
 {
 
     public Transform target;
     public Transform[] targets;
-    public NavMeshAgent[] agent;
+    NavMeshAgent agent;
     private int i = 0;
 
     // Use this for initialization
     void Start()
     {
-        agent[i].SetDestination(target.position);
+        agent = GetComponent<NavMeshAgent>();
+        agent.SetDestination(target.position);
     }
 
     // Update is called once per frame
@@ -24,7 +25,12 @@ public class AgentScript : MonoBehaviour
         {
             i++;
             if (i < targets.Length)
-                agent[i].destination = targets[i].position;
+                agent.destination = targets[i].position;
+            if (i == targets.Length)
+            {
+                i = 0;
+                agent.destination = targets[i].position;
+            }
         }
     }
 }
