@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Assets/Scripts/LoadScene1.cs.meta
 fileFormatVersion: 2
 guid: 87d48b4d53b33024b903fdeb7acdb5cf
 timeCreated: 1476383840
@@ -10,3 +11,17 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+fileFormatVersion: 2
+guid: 87d48b4d53b33024b903fdeb7acdb5cf
+timeCreated: 1476383840
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> origin/KraTos:Assets/Scripts/LoadScene1.cs.meta

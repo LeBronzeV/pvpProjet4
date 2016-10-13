@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Assets/Scripts/QuitScript.cs.meta
 fileFormatVersion: 2
 guid: de465cfc90d511c4faf193d60d6ed45f
 timeCreated: 1476386415
@@ -10,3 +11,17 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+fileFormatVersion: 2
+guid: de465cfc90d511c4faf193d60d6ed45f
+timeCreated: 1476386415
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> origin/KraTos:Assets/Scripts/QuitScript.cs.meta
