@@ -4,24 +4,29 @@ using System.Collections;
 public class Pauser : MonoBehaviour {
 	private bool paused = false;
     [SerializeField]
-    private GameObject menupause;
+    public GameObject myObject;
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyUp(KeyCode.P))
+		if(Input.GetKeyDown(KeyCode.P))
 		{
-			paused = !paused;
+          
+            paused = !paused;
             
 		}
 
         if (paused)
         {
+            myObject.SetActive(true);
+
             Time.timeScale = 0;
-            menupause.SetActive(true);
+
         }
-        else
+        else {
             Time.timeScale = 1;
-            menupause.SetActive(false);
+
+            myObject.SetActive(false);
+        }
 
     }
 
