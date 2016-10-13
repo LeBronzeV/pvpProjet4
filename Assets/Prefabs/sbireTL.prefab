@@ -27,6 +27,7 @@ GameObject:
   - 114: {fileID: 114000012572141330}
   - 135: {fileID: 135000011221814258}
   - 114: {fileID: 114000012804250252}
+  - 114: {fileID: 114000010113159134}
   m_Layer: 8
   m_Name: sbireTL
   m_TagString: Untagged
@@ -98,6 +99,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114000010113159134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012912651090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0173820ef0e04ec4193db5e1b27fc861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 195000013226646242}
 --- !u!114 &114000012572141330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,7 +136,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012912651090}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69320ee8b2ae09a4a9c48c07a62589cb, type: 3}
   m_Name: 
@@ -138,7 +151,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.8
+  m_Radius: 6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136000011907900918
 CapsuleCollider:
