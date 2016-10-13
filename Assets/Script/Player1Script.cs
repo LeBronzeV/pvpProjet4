@@ -6,24 +6,52 @@ public class Player1Script : MonoBehaviour {
     public float MaxHP;
     public float Attack;
     public float Speed;
+    public float throwForce;
+    public float MunitionCooldown;
 
     public Camera mainCamera;
     public GameObject AoE;
+    public GameObject Attack1;
+    public GameObject Special1;
 
+    private int Munition;
     private float HP;
     private Vector3 Direction;
     private bool dashing = false;
     private float dashTime;
+    private float MunitionCooldownTimer;
+    
 
 
     // Use this for initialization
     void Start () {
         HP = MaxHP;
+        Munition = 1;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (dashing == false)
+
+    void TakeDamage(float montant)
+    {
+        HP -= montant;
+    }
+
+    // Update is called once per frame
+    void Update () {
+        
+        if(HP < 0)
+        {
+            Destroy(this.gameObject);
+        }
+        if (Munition < 2)
+        {
+            if(MunitionCooldownTimer > MunitionCooldown)
+            {
+                Munition += 1;
+                MunitionCooldownTimer=0.0f;
+            }
+            MunitionCooldownTimer += Time.deltaTime;
+        }
+
+            if (dashing == false)
         {
             Direction = Vector3.zero;
             //Forward
@@ -58,13 +86,26 @@ public class Player1Script : MonoBehaviour {
             }
 
 
-            if (Input.GetMouseButtonDown(0)) // 0 = clic gauche , 1 = clic droit
+            if (Input.GetMouseButtonDown(0)) // 0 = clic gauche , tir
             {
                 AoE.SetActive(true);
+                playerPlane = new Plane(Vector3.up, gameObject.transform.position);
+                ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                hitdist = 0.0f;
+                if (playerPlane.Raycast(ray, out hitdist))
+                {
+                    var targetPoint = ray.GetPoint(hitdist);
+                    Direction = targetPoint - gameObject.transform.position;
+                    Direction = Vector3.Normalize(Direction);
+
+                    GameObject attack = (GameObject)Instantiate(Attack1, this.gameObject.transform.position, Quaternion.identity);
+                    attack.GetComponent<Rigidbody>().AddForce(Vector3.Normalize(Direction) * throwForce);
+                    attack.GetComponent("Attaque1Script").SendMessage("SetDamages",Attack);
+                }
 
             }
 
-            if (Input.GetMouseButtonDown(1)) // 0 = clic gauche , 1 = clic droit
+            if (Input.GetMouseButtonDown(1)) // 1 = clic droit , dash
             {
                 dashing = true;
                 playerPlane = new Plane(Vector3.up, gameObject.transform.position);
@@ -77,6 +118,26 @@ public class Player1Script : MonoBehaviour {
                     Direction = Vector3.Normalize(Direction);
                 }
                 dashTime = 0.0f;
+            }
+
+            if (Input.GetKeyDown("space") && Munition > 0) // Barre espace, attaque spéciale (grenade)
+            {
+                Munition -= 1;
+
+                playerPlane = new Plane(Vector3.up, gameObject.transform.position);
+                ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                hitdist = 0.0f;
+                if (playerPlane.Raycast(ray, out hitdist))
+                {
+                    var targetPoint = ray.GetPoint(hitdist);
+                    Direction = targetPoint - gameObject.transform.position;
+                    Direction = Vector3.Normalize(Direction);
+                    Direction.y += 0.7f;
+
+                    GameObject specialAttack = (GameObject)Instantiate(Special1, this.gameObject.transform.position, Quaternion.identity);
+                    specialAttack.GetComponent<Rigidbody>().AddForce(Vector3.Normalize(Direction) * throwForce *30);
+                    specialAttack.GetComponent("grenadeScript").SendMessage("SetDamages", Attack);
+                }
             }
         }
         else
