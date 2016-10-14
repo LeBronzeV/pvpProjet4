@@ -13,6 +13,11 @@ public class AgentScript : MonoBehaviour
     void Start(){
     }
 
+    void searchNavMesh ( Vector3 position)
+    {
+        agent.SetDestination(position);
+    }
+
     // Update is called once per frame
     void Update()
     {
