@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010172902618}
-  - 114: {fileID: 114000013106507752}
-  - 114: {fileID: 114000012074399422}
+  - 114: {fileID: 114000011354649454}
+  - 114: {fileID: 114000013651494442}
   m_Layer: 0
   m_Name: ObjectForCanvasGameOver
   m_TagString: Untagged
@@ -41,26 +41,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &114000012074399422
+--- !u!114 &114000011354649454
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011134085832}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de465cfc90d511c4faf193d60d6ed45f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114000013106507752
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011134085832}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87d48b4d53b33024b903fdeb7acdb5cf, type: 3}
+  m_Script: {fileID: 11500000, guid: c65e2c975000f54429bcc5c5026c8c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Destination: menuscene
+--- !u!114 &114000013651494442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011134085832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b3540d743730ce45b91ca5b2920f999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

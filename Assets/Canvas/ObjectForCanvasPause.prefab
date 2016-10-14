@@ -50,7 +50,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000010288814410}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87d48b4d53b33024b903fdeb7acdb5cf, type: 3}
+  m_Script: {fileID: 11500000, guid: c65e2c975000f54429bcc5c5026c8c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Destination: menuscene
@@ -74,6 +74,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000010288814410}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de465cfc90d511c4faf193d60d6ed45f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b3540d743730ce45b91ca5b2920f999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

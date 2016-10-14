@@ -10,10 +10,10 @@ public class Pauser : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.P))
 		{
-          
-            paused = !paused;
-            
-		}
+
+            FunctionPauser();
+
+        }
 
         if (paused)
         {
@@ -30,6 +30,9 @@ public class Pauser : MonoBehaviour {
 
     }
 
-    
-    
+    public void FunctionPauser()
+    {
+        paused = !paused;
+    }
+
 }
