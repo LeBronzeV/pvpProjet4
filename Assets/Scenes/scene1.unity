@@ -229,16 +229,20 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012302689830, guid: e30556fc1a24adb4abd5b6232bf292e7,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1199796353}
     - target: {fileID: 114000010291918868, guid: e30556fc1a24adb4abd5b6232bf292e7,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1446402696}
-    - target: {fileID: 114000012302689830, guid: e30556fc1a24adb4abd5b6232bf292e7,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1446402695}
+    - target: {fileID: 1000012196576252, guid: e30556fc1a24adb4abd5b6232bf292e7, type: 2}
+      propertyPath: m_Name
+      value: CanvasVictory
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e30556fc1a24adb4abd5b6232bf292e7, type: 2}
   m_IsPrefabParent: 0
@@ -339,16 +343,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114000010662490052, guid: 6e305cb5cafba0b47a0111cdaa702c40,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1507719812}
     - target: {fileID: 114000012265480770, guid: 6e305cb5cafba0b47a0111cdaa702c40,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1507719811}
+    - target: {fileID: 114000010662490052, guid: 6e305cb5cafba0b47a0111cdaa702c40,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1507719812}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e305cb5cafba0b47a0111cdaa702c40, type: 2}
   m_IsPrefabParent: 0
@@ -553,6 +557,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!1 &1199796353 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011134085832, guid: b1bdb51124788b843862988f5e4e3dc6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1446402694}
 --- !u!1001 &1446402694
 Prefab:
   m_ObjectHideFlags: 0
@@ -592,15 +601,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011134085832, guid: b1bdb51124788b843862988f5e4e3dc6, type: 2}
+      propertyPath: m_Name
+      value: ObjectForCanvasVictory
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1bdb51124788b843862988f5e4e3dc6, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1446402695 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114000013651494442, guid: b1bdb51124788b843862988f5e4e3dc6,
-    type: 2}
-  m_PrefabInternal: {fileID: 1446402694}
-  m_Script: {fileID: 11500000, guid: 4b3540d743730ce45b91ca5b2920f999, type: 3}
 --- !u!114 &1446402696 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000011354649454, guid: b1bdb51124788b843862988f5e4e3dc6,
