@@ -15,14 +15,23 @@ public class Player1Script : MonoBehaviour {
     public GameObject Special1;
 
     private int Munition;
-    private float HP;
+    public float HP;
     private Vector3 Direction;
     private bool dashing = false;
     private float dashTime;
     private float MunitionCooldownTimer;
+
+    public Transform respawnPlayerAlly;
+    public Collider monCol;
+    public Rigidbody monRigid;
+
+    [SerializeField]
+    private ParticleSystem particule1;
+    [SerializeField]
+    private ParticleSystem particule2;
+    [SerializeField]
+    private ParticleSystem particule3;
     
-
-
     // Use this for initialization
     void Start () {
         HP = MaxHP;
@@ -34,17 +43,20 @@ public class Player1Script : MonoBehaviour {
         mainCamera = cam;
     }
 
-    void TakeDamage(float montant)
+    void TakeDamageEnemy(float montant)
     {
         HP -= montant;
     }
 
+    
+
     // Update is called once per frame
     void Update () {
         
-        if(HP < 0)
+
+        if (HP <= 0)
         {
-            Destroy(this.gameObject);
+            StartCoroutine(respawnTime());
         }
         if (Munition < 2)
         {
@@ -156,5 +168,19 @@ public class Player1Script : MonoBehaviour {
                 dashing = false;
             }
         }
+    }
+
+    IEnumerator respawnTime()
+    {
+        monCol.enabled = false;
+        monRigid.isKinematic = true;
+        yield return new WaitForSeconds(5.0f);
+        monCol.enabled = true;
+        monRigid.isKinematic = false;
+        this.gameObject.transform.position = respawnPlayerAlly.position;
+        particule1.Play();
+        particule2.Play();
+        particule3.Play();
+        HP = MaxHP;
     }
 }

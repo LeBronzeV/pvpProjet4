@@ -5,7 +5,7 @@ public class Minion2sbireAlly : MonoBehaviour {
 
     public float MaxHP;
 
-    static private float HP;
+    public float HP;
 
     // Use this for initialization
     void Start()

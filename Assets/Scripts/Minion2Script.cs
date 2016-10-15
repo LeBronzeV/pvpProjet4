@@ -14,9 +14,7 @@ public class Minion2Script : MonoBehaviour {
 
     void TakeDamage(float montant)
     {
-        Debug.Log(HP);
         HP -= montant;
-        Debug.Log(HP);
     }
     
     // Update is called once per frame
